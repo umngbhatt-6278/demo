@@ -16,7 +16,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("demoappNew.keystore")
+            storeFile file('/home/umang/UmangData/DemoProjects/demo/app/demoappNew')
             storePassword "123456"
             keyAlias "demoappNew"
             keyPassword "123456"
