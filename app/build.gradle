@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        demonewupdate {
+            storeFile file('/home/umang/UmangData/DemoProjects/demo/app/demoappNew')
+            storePassword '123456'
+            keyAlias = 'demoappNew'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
@@ -14,18 +22,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        betarelease {
-            storeFile file('/home/umang/UmangData/DemoProjects/demo/app/demoappNew.jks')
-            storePassword "123456"
-            keyAlias "demoappNew"
-            keyPassword "123456"
 
-            // Optional, specify signing versions used
-            v1SigningEnabled true
-            v2SigningEnabled true
-        }
-    }
 
     buildTypes {
         release {
@@ -34,11 +31,6 @@ android {
         }
     }
 
-    buildTypes {
-        release {
-            signingConfig signingConfigs.betarelease
-        }
-    }
 
 }
 
