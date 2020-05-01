@@ -15,8 +15,8 @@ android {
     }
 
     signingConfigs {
-        release {
-            storeFile file('/home/umang/UmangData/DemoProjects/demo/app/demoappNew')
+        betarelease {
+            storeFile file('/home/umang/UmangData/DemoProjects/demo/app/demoappNew.jks')
             storePassword "123456"
             keyAlias "demoappNew"
             keyPassword "123456"
@@ -30,8 +30,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.betarelease
         }
     }
 
